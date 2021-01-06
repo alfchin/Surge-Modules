@@ -1,0 +1,9 @@
+#!name=Jego Trip module
+
+[MITM]
+hostname = %INSERT% task.jegotrip.com.cn, app*.jegotrip.com.cn
+
+[Script]
+无忧行签到 = type=cron,cronexp=0 9 * * *,script-path=https://ooxx.be/js/jegotrip.js
+无忧行Cookie = type=http-response,pattern=https?:\/\/app.*\.jegotrip\.com\.cn\/.*getUser\?,script-path=https://ooxx.be/js/jegotrip.js, requires-body=true
+无忧行Cookie2 = type=http-response,pattern=https?:\/\/task\.jegotrip\.com\.cn\:8080\/app\/tasks\?userid,script-path=https://ooxx.be/js/jegotrip.js, requires-body=true
